@@ -17,10 +17,8 @@
     </div>
     <div class="login" v-else>
       <span class="login-letter">LET'S SHARE</span>
-      <div class="wrapper">
-        <img src="../assets/pencil.svg" class="pen" />
-        <img src="../assets/scientistavatar.svg" class="avatar" />
-      </div>
+      <img src="../assets/pencil.svg" class="pen" />
+      <img src="../assets/scientistavatar.svg" class="avatar" />
     </div>
   </header>
 </template>
@@ -29,30 +27,42 @@
 export default {
   data: function() {
     return {
-      login: true
+      login: false
     };
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../assets/base.scss';
 .no-login {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #009933;
+  background-color: $themeColor;
   color: white;
-  padding:12px;
+  padding: 12px;
 }
 .login {
-  background-color: #009933;
+  background-color: $themeColor;
   color: white;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 12% auto 30px 26px 40px 12%;
   align-items: center;
-  padding: 12px 12%;
-  position: relative;
 }
+@media (max-width: 812px) {
+  .login {
+    background-color: $themeColor;
+    color: white;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 12% auto 20px 16px 30px 12%;
+    align-items: center;
+  }
+}
+
 .letter {
   font-size: 40px;
   padding: 14px;
@@ -69,22 +79,43 @@ export default {
 }
 .login-letter {
   font-size: 40px;
+  grid-row: 1/2;
+  grid-column: 2/3;
 }
-.wrapper {
-    position: absolute;
-    right:0;
-    padding-right:12%;
+@media (max-width: 812px) {
+  .login-letter {
+    font-size: 20px;
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
 }
 .pen {
-  width: 40px;
-  height: 40px;
-  margin-right:20px;
-
+  width: 30px;
+  height: 30px;
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+@media (max-width: 812px) {
+  .pen {
+    width: 20px;
+    height: 20px;
+    grid-row: 1/2;
+    grid-column: 3/4;
+  }
 }
 .avatar {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  grid-row: 1/2;
+  grid-column: 5/6;
+}
+@media (max-width: 812px) {
+  .avatar {
+    width: 30px;
+    height: 30px;
+    grid-row: 1/2;
+    grid-column: 5/6;
+  }
 }
 </style>
 
