@@ -2,26 +2,58 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 11:45:52
- * @LastEditTime: 2019-08-19 14:13:39
+ * @LastEditTime: 2019-08-19 19:49:29
  * @LastEditors: Please set LastEditors
  -->
 <template>
   <div id="app">
-    <router-view/>
+    <Top id="header"></Top>
+    <router-view id="main"></router-view>
+    <Bottom id="footer"></Bottom>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Top from "./components/Top.vue";
+import Bottom from "./components/Bottom.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Top,
+    Bottom,
   }
-}
-</script>
+};
+</script lang="scss">
 
 <style>
-
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+html, body ,#app{
+  height:100%;
+}
+#app {
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 12% auto 12%
+}
+#header {
+  grid-row: 1/2;
+  grid-column:1/4;
+  border:1px solid red;
+}
+#main {
+  grid-row: 2/3;
+  grid-column:2/3;
+  border:1px solid yellow;
+}
+#footer {
+  grid-row: 3/4;
+  grid-column:1/4;
+  border:1px solid blue;
+}
 </style>

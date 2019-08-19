@@ -2,11 +2,11 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 12:00:31
- * @LastEditTime: 2019-08-19 15:38:35
+ * @LastEditTime: 2019-08-19 17:03:37
  * @LastEditors: Please set LastEditors
  */
-import request from '@/helps/request'
-window.request = request;
+import auth from '@/api/auth'
+window.auth = auth;
 export default {
     props: {
 
