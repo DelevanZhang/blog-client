@@ -2,12 +2,12 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 18:18:34
- * @LastEditTime: 2019-08-19 20:14:54
+ * @LastEditTime: 2019-08-20 17:39:28
  * @LastEditors: Please set LastEditors
  -->
 <template>
   <header>
-    <div class="no-login" v-if="login">
+    <div class="no-login" v-if="!isLogin">
       <span class="letter">LET'S SHARE</span>
       <span class="good">精品博客汇聚</span>
       <div>
@@ -18,23 +18,46 @@
     <div class="login" v-else>
       <span class="login-letter">LET'S SHARE</span>
       <img src="../assets/pencil.svg" class="pen" />
-      <img src="../assets/scientistavatar.svg" class="avatar" />
+      <menu>
+        <img :src="user.avatar" class="avatar" />
+        <ul class="menu">
+          <li>
+            <router-link to="/my">我的</router-link>
+          </li>
+          <li>
+            <a href="#" @click="onLogout">注销</a>
+          </li>
+        </ul>
+      </menu>
     </div>
   </header>
 </template>
 
 <script>
+import auth from "@/api/auth.js";
+import { mapActions, mapGetters } from "vuex";
+window.auth =auth;
 export default {
   data: function() {
-    return {
-      login: false
-    };
+    return {};
+  },
+  computed: {
+    ...mapGetters(["isLogin", "user"])
+  },
+  created() {
+    this.checkLogin();
+  },
+  methods: {
+    ...mapActions(["checkLogin",'logOut']),
+    onLogout() {
+      this.logOut();
+    }
   }
 };
 </script>
 
 <style scoped lang="scss">
-@import '../assets/base.scss';
+@import "../assets/base.scss";
 .no-login {
   display: flex;
   justify-content: center;
@@ -51,6 +74,7 @@ export default {
   grid-template-rows: auto;
   grid-template-columns: 12% auto 30px 26px 40px 12%;
   align-items: center;
+  position: relative;
 }
 @media (max-width: 812px) {
   .login {
@@ -103,19 +127,45 @@ export default {
     grid-column: 3/4;
   }
 }
-.avatar {
-  width: 40px;
-  height: 40px;
+menu {
   grid-row: 1/2;
   grid-column: 5/6;
 }
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 @media (max-width: 812px) {
   .avatar {
     width: 30px;
     height: 30px;
-    grid-row: 1/2;
-    grid-column: 5/6;
   }
+}
+ul {
+  display: none;
+  position: absolute;
+  list-style: none;
+  border: 1px solid #eaeaea;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  width: 40px;
+  a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    display: block;
+    padding: 5px 5px;
+    &:hover {
+      background-color: #eaeaea;
+    }
+  }
+}
+menu:hover ul {
+  display: block;
+  cursor: pointer;
 }
 </style>
 

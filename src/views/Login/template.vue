@@ -8,14 +8,12 @@
 <template>
 
     <div>
-       <!-- <el-button type="danger" disabled>危险按钮</el-button>
-        <el-button class="moren" @click="tishi">默认按钮</el-button> -->
         登录
     </div>
 </template>
 
 <script src="./template.js">
-
+  
 </script>
 
 <style scoped lang="scss" src="./template.scss">

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 14:40:33
- * @LastEditTime: 2019-08-19 16:28:12
+ * @LastEditTime: 2019-08-20 16:00:59
  * @LastEditors: Please set LastEditors
  */
 import axios from 'axios';
@@ -21,7 +21,6 @@ export default function request(url,type='get',data={}){
         }
         axios(options)
             .then(res=>{
-                console.log(res)
                 if(res.status === 200){
                     resolve(res.data)
                 }else {
