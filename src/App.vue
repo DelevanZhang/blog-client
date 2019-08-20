@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 11:45:52
- * @LastEditTime: 2019-08-19 19:49:29
+ * @LastEditTime: 2019-08-20 19:17:13
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -24,9 +24,9 @@ export default {
     Bottom,
   }
 };
-</script lang="scss">
+</script>
 
-<style>
+<style lang="scss">
 * {
   margin:0;
   padding: 0;
@@ -49,7 +49,6 @@ html, body ,#app{
 #main {
   grid-row: 2/3;
   grid-column:2/3;
-  border:1px solid yellow;
 }
 #footer {
   grid-row: 3/4;

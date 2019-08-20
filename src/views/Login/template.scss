@@ -1,6 +1,22 @@
-div {
-    color:red
-}
-.moren {
-    background-color: red;
+@import '@/assets/base.scss';
+.login {
+    padding-top:100px;
+    width:400px;
+    height:100%;
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+    h4{
+        margin:12px 0;
+    }
+    .el-button{
+       margin-top:34px;
+    }
+    p {
+        font-size: 12px;
+        margin:34px auto 0;
+
+        color: $textLighterColor;
+       a{text-decoration: none;} 
+    }
 }

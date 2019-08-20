@@ -2,11 +2,10 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-20 12:09:06
- * @LastEditTime: 2019-08-20 17:39:00
+ * @LastEditTime: 2019-08-20 20:18:11
  * @LastEditors: Please set LastEditors
  */
-import Auth from '@/api/auth'
-import { longStackSupport } from 'q';
+import Auth from '@/api/auth';
 const state = {
     user:null,
     isLogin:false,
@@ -32,8 +31,6 @@ const actions = {
     async checkLogin({commit,state}){
         if(state.isLogin){return true}
         let res = await Auth.isLogin()
-        console.log('res')
-        console.log(res)
         commit('setLogin',{isLogin:res.isLogin})
         commit('setUser',{user:res.data})
        },
@@ -41,7 +38,20 @@ const actions = {
         await Auth.logout()
         commit('setUser',{user:null})
         commit('setLogin',{isLogin:false})
-    }
+    },
+    login({ commit }, { username, password }) {
+        return Auth.login({ username, password })
+          .then(res => {
+          console.log("TCL: login -> res", res)
+          commit('setUser',{user:res.data})
+          commit('setLogin',{isLogin:true})
+          })
+      },
+    async ll ({ commit }, { username, password }){
+            let res = await Auth.login({ username, password })
+            commit('setUser', { user: res.data })
+            commit('setLogin', { isLogin: true })
+      }
 }
  
 export default{
