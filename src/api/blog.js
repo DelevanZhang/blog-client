@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 16:30:46
- * @LastEditTime: 2019-08-19 18:01:32
+ * @LastEditTime: 2019-08-21 14:58:20
  * @LastEditors: Please set LastEditors
  */
 import request from '@/helps/request'
@@ -15,14 +15,17 @@ const URL = {
 }
 
 export default {
-    getBlog({page=1,userId,atIndex} = {page=1}){
+    getBlog({page=1,userId,atIndex} = {page:1}){
         return request(URL.GETBLOG,'get',{page,userId,atIndex})
     },
+    getIndexBlog({ page=1 } = { page: 1}) {
+        return this.getBlog({ page, atIndex: true })
+      },
     getBlogDetail({blogId}){
         return request(URL.GETBLOGDETAIL.replace(':blogId',blogId))
     },
-    createBlog({title='',content='',description=''} = {title: '', content: '', description: '',}){
-        return request(URL.CREATEBLOG,'post',{title,content,description})
+    createBlog({title='',content='',description='',atIndex=false} = {title: '', content: '', description: '',atIndex:false}){
+        return request(URL.CREATEBLOG,'post',{title,content,description,atIndex})
     },
     modifyBlog({blogId},{title,content,description,atIndex}){
         return request(URL.MODIFYBLOG.replace(':blogId',blogId),'patch',{title,content,description,atIndex})

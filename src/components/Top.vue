@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 18:18:34
- * @LastEditTime: 2019-08-20 17:39:28
+ * @LastEditTime: 2019-08-21 16:06:22
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -11,13 +11,21 @@
       <span class="letter">LET'S SHARE</span>
       <span class="good">精品博客汇聚</span>
       <div>
-        <el-button type="success"><router-link to="/Login">立即登录</router-link></el-button>
-        <el-button type="success"><router-link to="/Register">注册账号</router-link></el-button>
+        <el-button type="success">
+          <router-link to="/Login">立即登录</router-link>
+        </el-button>
+        <el-button type="success">
+          <router-link to="/Register">注册账号</router-link>
+        </el-button>
       </div>
     </div>
     <div class="login" v-else>
-      <span class="login-letter">LET'S SHARE</span>
-      <img src="../assets/pencil.svg" class="pen" />
+      <span class="login-letter">
+        <router-link to="/">LET'S SHARE</router-link>
+      </span>
+      <router-link to="/Create" class="pen">
+        <img src="../assets/pencil.svg" class="pen" />
+      </router-link>
       <menu>
         <img :src="user.avatar" class="avatar" />
         <ul class="menu">
@@ -36,7 +44,7 @@
 <script>
 import auth from "@/api/auth.js";
 import { mapActions, mapGetters } from "vuex";
-window.auth =auth;
+window.auth = auth;
 export default {
   data: function() {
     return {};
@@ -48,7 +56,7 @@ export default {
     this.checkLogin();
   },
   methods: {
-    ...mapActions(["checkLogin",'logOut']),
+    ...mapActions(["checkLogin", "logOut"]),
     onLogout() {
       this.logOut();
     }
@@ -75,6 +83,10 @@ export default {
   grid-template-columns: 12% auto 30px 26px 40px 12%;
   align-items: center;
   position: relative;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 @media (max-width: 812px) {
   .login {
@@ -84,6 +96,10 @@ export default {
     grid-template-rows: auto;
     grid-template-columns: 12% auto 20px 16px 30px 12%;
     align-items: center;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 
@@ -143,7 +159,7 @@ menu {
     height: 30px;
   }
 }
-ul {
+.menu {
   display: none;
   position: absolute;
   list-style: none;
@@ -152,11 +168,12 @@ ul {
   padding: 0;
   background-color: #fff;
   width: 40px;
+  z-index: 1000;
   a {
     text-decoration: none;
-    color: #333;
     font-size: 12px;
     display: block;
+    color: #333;
     padding: 5px 5px;
     &:hover {
       background-color: #eaeaea;
@@ -169,8 +186,8 @@ menu:hover ul {
 }
 .el-button {
   a {
-    text-decoration:none;
-    color:$themeColor;
+    text-decoration: none;
+    color: $themeColor;
   }
 }
 </style>

@@ -11,7 +11,7 @@
     <el-input v-model="username" type="text" placeholder="用户名" />
     <h4>密码</h4>
     <el-input v-model="password" type="password" placeholder="密码" />
-    <el-button type="success" plain @click="onLogin">立即登录</el-button>
+    <el-button type="success" @click="onLogin">立即登录</el-button>
 
     <p class="notice">
       没有账号？
