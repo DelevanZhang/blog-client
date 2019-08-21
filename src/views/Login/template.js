@@ -16,21 +16,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(['login', 'll']),
+    ...mapActions(['login']),
 
     onLogin() {
-      console.log('this.username', this.username)
-      console.log('this.password', this.password)
-      // this.login({username: this.username, password: this.password})
-      //   .then(()=>{
-      //     console.log('gggggggggggg')
-      //     this.$router.push({path: this.$route.query.redirect || '/'})
-      //   })
-      // this.ll({username: this.username, password: this.password})
-      auth.login({
-        username: this.username,
-        password: this.password
-      })
+      this.login({username: this.username, password: this.password})
+        .then(()=>{
+          this.$router.push({path:'/'})
+        })
     }
   }
 }

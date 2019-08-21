@@ -20,7 +20,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Login',
       component: Login
     },
     {
@@ -36,7 +36,7 @@ export default new Router({
       component: Edit
     },
     {
-      path: '/Index',
+      path: '/',
       component: Index
     },
     {

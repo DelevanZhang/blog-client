@@ -11,8 +11,8 @@
       <span class="letter">LET'S SHARE</span>
       <span class="good">精品博客汇聚</span>
       <div>
-        <el-button type="success">立即登录</el-button>
-        <el-button type="success">注册账号</el-button>
+        <el-button type="success"><router-link to="/Login">立即登录</router-link></el-button>
+        <el-button type="success"><router-link to="/Register">注册账号</router-link></el-button>
       </div>
     </div>
     <div class="login" v-else>
@@ -166,6 +166,12 @@ ul {
 menu:hover ul {
   display: block;
   cursor: pointer;
+}
+.el-button {
+  a {
+    text-decoration:none;
+    color:$themeColor;
+  }
 }
 </style>
 
