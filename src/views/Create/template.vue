@@ -6,7 +6,7 @@
  * @LastEditors: Please set LastEditors
  -->
 <template>
-  <div id="edit">
+  <div id="create">
     <h1>编辑文章</h1>
     <div class="title">
       <div>文章标题</div>

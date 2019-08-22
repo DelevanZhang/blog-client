@@ -20,7 +20,7 @@ export default {
     methods:{
         onEdit(){
             blog.createBlog({title:this.title,content:this.content,description:this.description,atIndex:this.atIndex})
-            .then(res=>{this.$router.push({path:`/detail/${res.data.id}`})
+            .then(res=>{this.$router.push({path:`/Detail/${res.data.id}`})
             Message({
                 showClose: true,
                 message: '创建成功',

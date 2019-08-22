@@ -13,7 +13,6 @@ export default {
     data() {
         return {
             page: 1,
-            atIndex: false,
             total: 0,
             blogs: [],
             loading: false,
@@ -29,11 +28,9 @@ export default {
     },
     created() {
         this.page = this.$route.query.page || 1
-        console.log(this.user)
         blog.getBlog({
                 page: this.page,
                 userId: this.user.id,
-                atIndex: this.atIndex
             })
             .then(res => {
                 this.loading = true;

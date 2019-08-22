@@ -55,16 +55,13 @@ body,
 #header {
   grid-row: 1/2;
   grid-column: 1/4;
-  border: 1px solid red;
 }
 #main {
   grid-row: 2/3;
   grid-column: 2/3;
-  border:1px solid yellow;
 }
 #footer {
   grid-row: 3/4;
   grid-column: 1/4;
-  border: 1px solid blue;
 }
 </style>

@@ -22,7 +22,9 @@
           <h4>{{blog.title}}</h4>
           <p>{{blog.description}}</p>
         </router-link>
-        <span>编辑</span>
+        <span>
+          <router-link :to="`/Edit/${blog.id}`">编辑</router-link>
+        </span>
         <span @click="onDelete(blog.id)">删除</span>
       </section>
     </main>
