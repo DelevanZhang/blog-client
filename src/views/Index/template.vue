@@ -2,12 +2,12 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 12:00:58
- * @LastEditTime: 2019-08-21 19:53:10
+ * @LastEditTime: 2019-08-22 11:46:51
  * @LastEditors: Please set LastEditors
  -->
 
 <template>
-  <div id="index">
+  <div id="index" v-if="loading">
     <div class="wrapper" v-for="blog in blogs" :key="blog.id">
       <img :src="blog.user.avatar" :alt="blog.user.username" />
       <span>{{blog.user.username}}</span>
