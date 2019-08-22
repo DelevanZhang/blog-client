@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 18:18:34
- * @LastEditTime: 2019-08-21 16:06:22
+ * @LastEditTime: 2019-08-22 08:58:15
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -66,6 +66,18 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/base.scss";
+// @media (max-width: 812px) {
+//   .no-login {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   align-items: center;
+//   background-color: $themeColor;
+//   color: white;
+//   padding: 12px;
+//   max-width: 812px;
+// }
+// }
 .no-login {
   display: flex;
   justify-content: center;
@@ -94,7 +106,7 @@ export default {
     color: white;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 12% auto 20px 16px 30px 12%;
+    grid-template-columns: 5% auto 20px 16px 30px 5%;
     align-items: center;
     a {
       text-decoration: none;
