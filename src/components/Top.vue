@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-19 18:18:34
- * @LastEditTime: 2019-08-22 08:58:15
+ * @LastEditTime: 2019-08-22 09:04:59
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -66,18 +66,7 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/base.scss";
-// @media (max-width: 812px) {
-//   .no-login {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   align-items: center;
-//   background-color: $themeColor;
-//   color: white;
-//   padding: 12px;
-//   max-width: 812px;
-// }
-// }
+
 .no-login {
   display: flex;
   justify-content: center;
@@ -100,13 +89,13 @@ export default {
     color: white;
   }
 }
-@media (max-width: 812px) {
+@media screen and (max-width: 812px) {
   .login {
     background-color: $themeColor;
     color: white;
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 5% auto 20px 16px 30px 5%;
+    grid-template-columns: 12% auto 20px 16px 30px 12%;
     align-items: center;
     a {
       text-decoration: none;
@@ -134,7 +123,7 @@ export default {
   grid-row: 1/2;
   grid-column: 2/3;
 }
-@media (max-width: 812px) {
+@media screen and (max-width: 812px) {
   .login-letter {
     font-size: 20px;
     grid-row: 1/2;
@@ -147,7 +136,7 @@ export default {
   grid-row: 1/2;
   grid-column: 3/4;
 }
-@media (max-width: 812px) {
+@media screen and (max-width: 812px) {
   .pen {
     width: 20px;
     height: 20px;
@@ -165,7 +154,7 @@ menu {
   border-radius: 50%;
 }
 
-@media (max-width: 812px) {
+@media screen and (max-width: 812px) {
   .avatar {
     width: 30px;
     height: 30px;

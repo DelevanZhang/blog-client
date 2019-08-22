@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 11:45:52
- * @LastEditTime: 2019-08-21 11:28:14
+ * @LastEditTime: 2019-08-22 13:54:42
  * @LastEditors: Please set LastEditors
  */
 import Vue from 'vue'
@@ -70,7 +70,7 @@ router.beforeEach((to, from, next) => {
     store.dispatch('checkLogin').then(isLogin=>{
       if (!isLogin) {
         next({
-          path: '/login',
+          path: '/Login',
           query: { redirect: to.fullPath }
         })
       } else {

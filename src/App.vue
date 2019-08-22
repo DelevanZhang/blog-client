@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 11:45:52
- * @LastEditTime: 2019-08-21 16:50:55
+ * @LastEditTime: 2019-08-22 09:39:58
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -45,7 +45,7 @@ body,
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 12% auto 12%;
 }
-@media (max-width: 812px) {
+@media screen and (max-width: 400px) {
   #app {
   display: grid;
   grid-template-rows: auto 1fr auto;

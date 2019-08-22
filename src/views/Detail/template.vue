@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-16 12:01:46
- * @LastEditTime: 2019-08-21 19:57:06
+ * @LastEditTime: 2019-08-22 10:36:57
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -12,7 +12,7 @@
       <section>
         <h4>{{title}}</h4>
         <span>
-          <router-link to=''>{{user.username}}</router-link>
+          <router-link :to="`/User/${user.id}`">{{user.username}}</router-link>
           发布于{{friendlyDate(createdAt)}}
         </span>
       </section>
