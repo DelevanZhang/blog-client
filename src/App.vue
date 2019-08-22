@@ -45,7 +45,7 @@ body,
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 12% auto 12%;
 }
-@media (max-width: 812px) {
+@media screen and (max-width: 600px) {
   #app {
   display: grid;
   grid-template-rows: auto 1fr auto;
