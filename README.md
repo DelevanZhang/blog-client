@@ -1,29 +1,4 @@
 # blog-client
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Vue.js 技术栈多人共享博客
+2. 功能包括用户注册、登陆，首页(展示被用户分享到首页的博客列表)，博客详情，个人博客列表页面，博客创建、编辑、修改、删除、设置到首页。
